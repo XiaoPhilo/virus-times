@@ -1,0 +1,16 @@
+_G.farm = true --trigger, replace with 'false' to disable.
+
+if _G.farm == true then
+
+--this line tp the player to the mega frost tree. You have to be close to hit it.
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2247, 123, 118.5)
+
+while _G.farm do
+wait()
+local args = {
+    [1] = 4 --there are 4 megas, change for others.
+}
+
+game:GetService("ReplicatedStorage").Communication.Remotes.HitMegaTree:FireServer(unpack(args))
+end
+end
